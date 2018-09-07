@@ -15,12 +15,23 @@ import java.awt.Graphics;
  */
 public class Quadrangle implements Shape{
 
+    private boolean fill;
+    
+    public Quadrangle(boolean fill)
+    {
+        this.fill = fill;
+    }
+    
     @Override
     public void draw(Graphics graphics, int x1, int x2
             , int y1, int y2, Color color) 
     {
         graphics.setColor(color);
         graphics.drawRect(x1, y1, x2, y2);
+        if (fill == true)
+        {
+            graphics.fillRect(x1, y1, x2, y2);
+        }
     }
     
 }
