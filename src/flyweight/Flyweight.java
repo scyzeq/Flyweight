@@ -35,7 +35,7 @@ public class Flyweight extends JFrame{
         contentPane.add(panel, BorderLayout.CENTER);
         contentPane.add(startButton, BorderLayout.SOUTH);
         contentPane.add(startButton2, BorderLayout.LINE_END);
-        this.setSize(400,400);
+        this.setSize(700,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         
@@ -44,7 +44,10 @@ public class Flyweight extends JFrame{
             public void actionPerformed(ActionEvent e) 
             {
                 Graphics g = panel.getGraphics();
-                line.draw(g, 150, 150, 200, 200, Color.red);                
+//                line.draw(g, 150, 150, 200, 200, Color.red);                
+                line.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
+                        , (int)(Math.random()*500), (int)(Math.random()*500)
+                        , Color.red);                
             }
         });        
         startButton2.addActionListener(new ActionListener() {
@@ -52,7 +55,10 @@ public class Flyweight extends JFrame{
             public void actionPerformed(ActionEvent e) 
             {
                 Graphics g = panel.getGraphics();
-                circle.draw(g, 0, 0, 150, 150, Color.blue);                
+//                circle.draw(g, 0, 0, 150, 150, Color.blue);  
+                circle.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
+                        , (int)(Math.random()*500), (int)(Math.random()*500)
+                        , Color.blue);  
             }
         });
         
