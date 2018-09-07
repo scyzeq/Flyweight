@@ -33,15 +33,17 @@ public class Flyweight extends JFrame{
         JButton startButton = new JButton("Draw line");
         JButton startButton2 = new JButton("Draw circle");
         JButton startButton3 = new JButton("Draw quadrangle");
+        JButton startButton4 = new JButton("Draw filled circle");
         
         subPanel.add(startButton);
         subPanel.add(startButton2);
         subPanel.add(startButton3);
+        subPanel.add(startButton4);
         Container contentPane = getContentPane();
         
         Shape line = new Line();
-        Shape circle = new Circle();
-        Shape quadrangle = new Quadrangle();
+        Circle circle = new Circle();
+        Quadrangle quadrangle = new Quadrangle();
         Colors colors = new Colors();
         
         this.setTitle("Drawing");
@@ -68,6 +70,7 @@ public class Flyweight extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) 
             {
+                circle.setFill(false);
                 circle.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
                         , (int)(Math.random()*500), (int)(Math.random()*500)
                         , colors.getRandomColor());  
@@ -83,6 +86,17 @@ public class Flyweight extends JFrame{
                         , colors.getRandomColor());  
             }
         });        
+        startButton4.addActionListener(new ActionListener() 
+        {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                circle.setFill(true);
+                circle.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
+                        , (int)(Math.random()*500), (int)(Math.random()*500)
+                        , colors.getRandomColor());  
+            }
+        });
     }
     
     
