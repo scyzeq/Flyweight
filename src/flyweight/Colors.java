@@ -14,10 +14,12 @@ import java.awt.Color;
  * @author AJuda
  */
 public class Colors {
-    private static final Color colors[] = { Color.RED
-            , Color.GREEN, Color.BLUE, Color.BLACK, Color.DARK_GRAY};
+
     
-    public Color getRandomColor() {
-		return colors[(int) (Math.random() * colors.length)];
-	}
+    public Color getRandomColor() 
+    {
+        
+        return Color.getHSBColor((float) (Math.random()*255)
+                , (float) (Math.random()*255), (float) (Math.random()*255));
+    }
 }
