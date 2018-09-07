@@ -39,23 +39,22 @@ public class Flyweight extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         
-        startButton.addActionListener(new ActionListener() {
+        Graphics g = panel.getGraphics();
+        startButton.addActionListener(new ActionListener() 
+        {
             @Override
             public void actionPerformed(ActionEvent e) 
-            {
-                Graphics g = panel.getGraphics();
-//                line.draw(g, 150, 150, 200, 200, Color.red);                
-                line.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
-                        , (int)(Math.random()*500), (int)(Math.random()*500)
+            {           
+                line.draw(g, (int)(Math.random()*700), (int)(Math.random()*700)
+                        , (int)(Math.random()*700), (int)(Math.random()*700)
                         , Color.red);                
             }
         });        
-        startButton2.addActionListener(new ActionListener() {
+        startButton2.addActionListener(new ActionListener() 
+        {
             @Override
             public void actionPerformed(ActionEvent e) 
             {
-                Graphics g = panel.getGraphics();
-//                circle.draw(g, 0, 0, 150, 150, Color.blue);  
                 circle.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
                         , (int)(Math.random()*500), (int)(Math.random()*500)
                         , Color.blue);  
