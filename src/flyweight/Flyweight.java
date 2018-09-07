@@ -34,7 +34,7 @@ public class Flyweight extends JFrame{
         this.setTitle("Drawing");
         contentPane.add(panel, BorderLayout.CENTER);
         contentPane.add(startButton, BorderLayout.SOUTH);
-        contentPane.add(startButton2, BorderLayout.LINE_END);
+        contentPane.add(startButton2, BorderLayout.WEST);
         this.setSize(700,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
