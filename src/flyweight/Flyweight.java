@@ -7,6 +7,7 @@ package flyweight;
 
 import flyweight.Shapes.Circle;
 import flyweight.Shapes.Line;
+import flyweight.Shapes.Quadrangle;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -26,15 +27,27 @@ public class Flyweight extends JFrame{
     public Flyweight()
     {
         final JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+        JPanel subPanel = new JPanel();
+        
         JButton startButton = new JButton("Draw line");
         JButton startButton2 = new JButton("Draw circle");
+        JButton startButton3 = new JButton("Draw quadrangle");
+        
+        subPanel.add(startButton);
+        subPanel.add(startButton2);
+        subPanel.add(startButton3);
         Container contentPane = getContentPane();
+        
         Shape line = new Line();
         Shape circle = new Circle();
+        Shape quadrangle = new Quadrangle();
+        Colors colors = new Colors();
+        
         this.setTitle("Drawing");
         contentPane.add(panel, BorderLayout.CENTER);
-        contentPane.add(startButton, BorderLayout.SOUTH);
-        contentPane.add(startButton2, BorderLayout.WEST);
+        contentPane.add(subPanel, BorderLayout.SOUTH);
+        
         this.setSize(700,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
@@ -47,7 +60,7 @@ public class Flyweight extends JFrame{
             {           
                 line.draw(g, (int)(Math.random()*700), (int)(Math.random()*700)
                         , (int)(Math.random()*700), (int)(Math.random()*700)
-                        , Color.red);                
+                        , colors.getRandomColor());                
             }
         });        
         startButton2.addActionListener(new ActionListener() 
@@ -57,17 +70,21 @@ public class Flyweight extends JFrame{
             {
                 circle.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
                         , (int)(Math.random()*500), (int)(Math.random()*500)
-                        , Color.blue);  
+                        , colors.getRandomColor());  
             }
         });
-        
+        startButton3.addActionListener(new ActionListener() 
+        {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                quadrangle.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
+                        , (int)(Math.random()*500), (int)(Math.random()*500)
+                        , colors.getRandomColor());  
+            }
+        });        
     }
     
-//    public void paint(Graphics g)
-//    {
-//        g.setColor(Color.red);
-//        g.drawLine(150, 150, 200, 200);
-//    }
     
     public static void main(String[] args) 
     {
