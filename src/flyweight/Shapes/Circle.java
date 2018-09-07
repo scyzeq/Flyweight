@@ -16,10 +16,7 @@ import java.awt.Graphics;
 public class Circle implements Shape{
 
     private boolean fill=false;
-    public Circle(boolean fill)
-    {
-        
-    }
+    
     @Override
     public void draw(Graphics graphics, int x1, int x2
             , int y1, int y2, Color color) 
