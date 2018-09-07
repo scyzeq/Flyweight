@@ -34,12 +34,14 @@ public class Flyweight extends JFrame{
         JButton startButton3 = new JButton("Draw quadrangle");
         JButton startButton4 = new JButton("Draw filled circle");
         JButton startButton5 = new JButton("Draw filled quadrangle");
+        JButton startButton6 = new JButton("Draw art :)");
         
         subPanel.add(startButton);
         subPanel.add(startButton2);
         subPanel.add(startButton3);
         subPanel.add(startButton4);
         subPanel.add(startButton5);
+        subPanel.add(startButton6);
         Container contentPane = getContentPane();
         
         Shape line = new Line();
@@ -106,6 +108,16 @@ public class Flyweight extends JFrame{
                 quadrangle.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
                         , (int)(Math.random()*500), (int)(Math.random()*500)
                         , colors.getRandomColor()); 
+            }
+        });
+        startButton6.addActionListener(new ActionListener() 
+        {
+            @Override
+            public void actionPerformed(ActionEvent e) 
+            {
+                RandomShape randomShape = new RandomShape();
+//                Shape shape = randomShape.getShape(getRandomShape());
+                
             }
         });
     }

@@ -1,0 +1,57 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package flyweight;
+
+import flyweight.Shapes.Circle;
+import flyweight.Shapes.Line;
+import flyweight.Shapes.Quadrangle;
+import java.util.HashMap;
+
+/**
+ *
+ * @author AJuda
+ */
+public class RandomShape {
+    
+    private static final HashMap<ShapeType, Shape> shapeList 
+            = new HashMap<ShapeType, Shape>();
+
+    public static Shape getShape(ShapeType shapeType)
+    {
+        Shape shapeChoice = shapeList.get(shapeType);
+        
+        if (shapeChoice == null) 
+        {
+            if (shapeType.equals(ShapeType.circle_fill)) 
+            {
+                shapeChoice = new Circle(true);
+            } 
+            else if (shapeType.equals(ShapeType.circle_no_fill)) 
+            {
+                shapeChoice = new Circle(false);
+            } 
+            else if (shapeType.equals(ShapeType.square_fill)) 
+            {
+                shapeChoice = new Quadrangle(true);
+            } 
+            else if (shapeType.equals(ShapeType.square_no_fill)) 
+            {
+                shapeChoice = new Quadrangle(false);
+            } 
+            else if (shapeType.equals(ShapeType.line)) 
+            {
+                shapeChoice = new Line();
+            }
+            shapeList.put(shapeType, shapeChoice);
+        }
+        return shapeChoice;
+    }
+    
+    public ShapeType getRandomShape()
+    {
+        return shapeList[(int) (Math.random() * shapeList.length)];
+    }
+}
