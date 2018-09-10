@@ -9,7 +9,6 @@ import flyweight.Shapes.Circle;
 import flyweight.Shapes.Line;
 import flyweight.Shapes.Quadrangle;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;

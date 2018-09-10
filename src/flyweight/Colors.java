@@ -18,8 +18,7 @@ public class Colors {
     
     public Color getRandomColor() 
     {
-        
-        return Color.getHSBColor((float) (Math.random()*255)
-                , (float) (Math.random()*255), (float) (Math.random()*255));
+        return Color.getHSBColor((float) (Math.random()*360)
+                , (float) (Math.random()*100), (float) (Math.random()*100));
     }
 }
