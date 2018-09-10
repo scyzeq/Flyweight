@@ -9,6 +9,7 @@ import flyweight.Shapes.Circle;
 import flyweight.Shapes.Line;
 import flyweight.Shapes.Quadrangle;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -51,7 +52,7 @@ public class Flyweight extends JFrame{
         contentPane.add(panel, BorderLayout.CENTER);
         contentPane.add(subPanel, BorderLayout.SOUTH);
         
-        this.setSize(700,700);
+        this.setSize(800,800);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         
@@ -116,11 +117,17 @@ public class Flyweight extends JFrame{
             public void actionPerformed(ActionEvent e) 
             {
                 RandomShape randomShape = new RandomShape();
-//                Shape shape = randomShape.getShape(getRandomShape());
-                
+                for(int i = 0; i < 50; i++)
+                {
+                    Shape shape = randomShape.getShape(randomShape.getRandomShape());
+                    shape.draw(g, (int)(Math.random()*500), (int)(Math.random()*500)
+                            , (int)(Math.random()*500), (int)(Math.random()*500)
+                            , colors.getRandomColor()); 
+                }
             }
         });
     }
+                
     
     
     public static void main(String[] args) 

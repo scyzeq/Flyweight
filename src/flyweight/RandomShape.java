@@ -52,6 +52,9 @@ public class RandomShape {
     
     public ShapeType getRandomShape()
     {
-        return shapeList[(int) (Math.random() * shapeList.length)];
+        ShapeType shapesList[] = { ShapeType.circle_fill,
+            ShapeType.circle_no_fill, ShapeType.line, ShapeType.square_fill,
+            ShapeType.square_no_fill};
+        return shapesList[(int) (Math.random() * shapesList.length)];
     }
 }
