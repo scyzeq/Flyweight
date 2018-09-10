@@ -16,12 +16,10 @@ import java.util.HashMap;
  */
 public class RandomShape {
     
-    private static final HashMap<ShapeType, Shape> shapeList 
-            = new HashMap<ShapeType, Shape>();
 
     public static Shape getShape(ShapeType shapeType)
     {
-        Shape shapeChoice = shapeList.get(shapeType);
+        Shape shapeChoice = null;
         
         if (shapeChoice == null) 
         {
@@ -45,7 +43,6 @@ public class RandomShape {
             {
                 shapeChoice = new Line();
             }
-            shapeList.put(shapeType, shapeChoice);
         }
         return shapeChoice;
     }
